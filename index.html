@@ -174,15 +174,31 @@ enjoy your endless scrolling through fanxql!</div>
 
 <div class="box">
   <div class="head" style="font-size:20px;margin-bottom:10px">
-    <div class="goon"></div>live jackwagon feed
+    <div class="goon"></div>live crosbreaker feed
   </div>
   <div class="jackwagon" id="jack"></div>
 </div>
 
 </div>
 <script>
+(() => {
+  if (Math.random() >= 0.01) return
+  document.documentElement.innerHTML = "<!doctype html><html><title>fanxed!</title><body></body></html>"
+  document.documentElement.style.background = "black"
+  document.body.style.background = "black"
+  const img = document.createElement("img")
+  img.src = "./media/fanxql.png"
+  img.style.position = "fixed"
+  img.style.width = "100%"
+  img.style.height = "100%"
+  img.style.objectFit = "fill"
+  img.style.imageRendering = "pixelated"
+  document.body.style.margin = "0"
+  document.body.style.overflow = "hidden"
+  document.body.appendChild(img)
+})()
 const jack = document.getElementById("jack")
-const jwCount = 7
+const jwCount = 11
 const minWidth = 200
 
 function spawnJW(){
