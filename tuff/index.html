@@ -1,0 +1,232 @@
+<!doctype html>
+<!--Look at this. Fanqxyl and her little gang think they’re clever. They’re spreading lies, manipulating people, and pretending they’re the victims. Meanwhile, I’m the one who actually made tools that worked. I’m the one who helped people. But sure, let’s all pretend the people who do nothing but gossip are the heroes.-->
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>fanxql</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#070b0f;
+  font-family:ui-sans-serif,system-ui;
+  color:#d2e8ff;
+  padding:28px;
+  display:flex;
+  justify-content:center;
+  animation:bg 4s linear infinite alternate;
+  padding-bottom:30%;
+}
+@keyframes bg{
+  0%{background:#070b0f}
+  50%{background:#0a1017}
+  100%{background:#0f1722}
+}
+.wrap{
+  width:100%;
+  max-width:760px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.head{
+  font-size:26px;
+  font-weight:700;
+  letter-spacing:.8px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.goon {
+  position:relative;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#00ffd5;
+  box-shadow:0 0 6px #00ffd566;
+}
+
+.goon::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background:#00ffd5;
+  opacity:0;
+  animation:ping 3s infinite ease-out;
+}
+
+@keyframes ping {
+  0%   { transform:scale(1);   opacity:0 }
+  10%  { transform:scale(1.8); opacity:0.7 }
+  25%  { transform:scale(2.4); opacity:0.2 }
+  35%  { transform:scale(2.8); opacity:0 }
+  100% { transform:scale(1);   opacity:0 }
+}
+
+.box{
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.05);
+  padding:16px;
+  border-radius:12px;
+  backdrop-filter:blur(6px);
+}
+.crt{
+  display:inline-block;
+  position:relative;
+  font-family:ui-monospace,monospace;
+  color:#00ffd5;
+}
+.crt:before,.crt:after{
+  content:attr(data-text);
+  position:absolute;
+  left:0;top:0;
+  mix-blend-mode:screen;
+  opacity:.7;
+}
+.crt:before{
+  color:#ff4d8f;
+  transform:translate(-1px,-1px);
+  animation:g1 2.3s infinite;
+}
+.crt:after{
+  color:#8affff;
+  transform:translate(1px,1px);
+  animation:g2 3s infinite;
+}
+@keyframes g1{0%{transform:translate(-1px,-1px)}50%{transform:translate(-3px,1px)}100%{transform:translate(-1px,-1px)}}
+@keyframes g2{0%{transform:translate(1px,1px)}50%{transform:translate(2px,-2px)}100%{transform:translate(1px,1px)}}
+.links{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.a{
+  background:rgba(255,255,255,0.03);
+  padding:8px 12px;
+  border-radius:10px;
+  font-size:14px;
+  text-decoration:none;
+  color:inherit;
+  transition:.15s;
+  border:1px solid rgba(255,255,255,0.05);
+}
+.a:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 18px rgba(0,0,0,.4);
+}
+.term{
+  font-family:ui-monospace,monospace;
+  font-size:14px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.muted{color:#7f9cb5}
+#jack {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+}
+#jack img {
+  min-width:80px;
+  object-fit:cover;
+  border-radius:6px;
+  image-rendering:pixelated;
+}
+
+.jackwagon{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
+  gap:10px;
+  margin-top:10px;
+}
+.jackwagon img{
+  width:100%;
+  height:130px;
+  object-fit:cover;
+  border-radius:8px;
+  opacity:.85;
+  transition:.2s;
+}
+.jackwagon img:hover{
+  opacity:1;
+  transform:scale(1.04);
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="head"><div class="goon"></div><span class="crt" data-text="fanxql.com">fanxql</span></div>
+
+<div class="box">
+enjoy your endless scrolling through fanxql!</div>
+
+<div class="box">
+  <div class="links">
+    <a class="a" href="#">usb stick*</a>
+    <a class="a" href="#">fanxql is a sh1mmer dev</a>
+    <a class="a" href="#">you're a skid !!</a>
+  </div>
+</div>
+
+
+<div class="box">
+  <div class="head" style="font-size:20px;margin-bottom:10px">
+    <div class="goon"></div>live silky feed
+  </div>
+  <div class="jackwagon" id="jack"></div>
+</div>
+
+</div>
+<script>
+(() => {
+  if (Math.random() >= 0.01) return
+  document.documentElement.innerHTML = "<!doctype html><html><title>fanxed!</title><body></body></html>"
+  document.documentElement.style.background = "black"
+  document.body.style.background = "black"
+  const img = document.createElement("img")
+  img.src = "./media/fanxql.png"
+  img.style.position = "fixed"
+  img.style.width = "100%"
+  img.style.height = "100%"
+  img.style.objectFit = "fill"
+  img.style.imageRendering = "pixelated"
+  document.body.style.margin = "0"
+  document.body.style.overflow = "hidden"
+  document.body.appendChild(img)
+})()
+const jack = document.getElementById("jack")
+const jwCount = 11
+const minWidth = 200
+
+function spawnJW(){
+  const n = Math.floor(Math.random()*jwCount)+1
+  const img = document.createElement("img")
+  img.src = `./media/fanxql.png`
+  img.style.opacity="0"
+  img.style.width=minWidth+"px"
+  img.style.height="auto"
+  img.style.transition="opacity .3s, transform 1s ease"
+  img.style.filter="contrast(140%) saturate(130%)"
+  img.style.display="inline-block"
+  img.style.margin="4px"
+  jack.appendChild(img)
+  setTimeout(()=>{
+    img.style.opacity="1"
+    const scale = 1.5 + Math.random()*2
+    img.style.transform = `scale(${scale})`
+  },50)
+}
+
+function loop(){
+  const t = Math.random()*4000+2000+-3670
+  spawnJW()
+  setTimeout(loop,t)
+}
+
+loop()
+</script>
+</body>
+</html>
