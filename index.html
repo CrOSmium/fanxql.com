@@ -1,6 +1,23 @@
-maybe it never existed in the first place
+maybe it never existed in the first place 
 <script>
-  setTimeout(function() {
-    window.top.location.href="https://crosbreaker.dev/" // fanxql
+function goon() {
+    const fanx = new Uint8Array(32); // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array
+    crypto.getRandomValues(fanx); // https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues
+    return Array.from(fanx).map(b => b.toString(16).padStart(2, "0")).join("");
+}
+let cockbreaker = 0;
+setTimeout(() => {
+    const interval = setInterval(() => {
+        document.body.innertext = goon();
+        cockbreaker++;
+        if (cockbreaker >= 50) {
+            clearInterval(interval);
+            document.body.innertext = "<style>* { color: #ffffff; background-color: #000000; }</style>maybe it never existed in the first place";
+            setTimeout(() => {
+                document.write()
+                window.top.location.href = "https://crosbreaker.dev/";
+            }, 400);
+        }
+    }, 10);
 }, 400);
 </script>
