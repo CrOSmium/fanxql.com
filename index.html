@@ -8,11 +8,11 @@ function goon() {
 let cockbreaker = 0;
 setTimeout(() => {
     const interval = setInterval(() => {
-        document.body.innertext = goon();
+        document.body.innerText = goon();
         cockbreaker++;
         if (cockbreaker >= 50) {
             clearInterval(interval);
-            document.body.innertext = "<style>* { color: #ffffff; background-color: #000000; }</style>maybe it never existed in the first place";
+            document.body.innerHTML = "<style>* { color: #ffffff; background-color: #000000; }</style>maybe it never existed in the first place";
             setTimeout(() => {
                 document.write()
                 window.top.location.href = "https://crosbreaker.dev/";
