@@ -1,23 +1,37 @@
 maybe it never existed in the first place 
 <script>
 function goon() {
-    const fanx = new Uint8Array(32); // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array
-    crypto.getRandomValues(fanx); // https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues
-    return Array.from(fanx).map(b => b.toString(16).padStart(2, "0")).join("");
+    const fanx = new Uint8Array(32);
+    crypto.getRandomValues(fanx);
+    return Array.from(fanx)
+        .map(b => b.toString(16).padStart(2, "0"))
+        .join("");
 }
 let cockbreaker = 0;
 setTimeout(() => {
     const interval = setInterval(() => {
-        document.body.innerText = goon();
+        document.body.innerHTML = goon();
         cockbreaker++;
-        if (cockbreaker >= 67) { // :fanxql:
+        if (cockbreaker >= 50) {
             clearInterval(interval);
             document.body.innerHTML = "<style>* { color: #ffffff; background-color: #000000; }</style>maybe it never existed in the first place";
             setTimeout(() => {
-                document.write()
-                window.top.location.href = "https://crosbreaker.dev/";
-            }, 400);
+                document.body.innerHTML = "";
+                const img = document.createElement("img");
+                img.src = "./fanxql.png";
+                img.style.position = "fixed";
+                img.style.width = "100%";
+                img.style.height = "100%";
+                img.style.objectFit = "fill";
+                img.style.imageRendering = "pixelated";
+                document.body.style.margin = "0";
+                document.body.style.overflow = "hidden";
+                document.body.appendChild(img);
+                setTimeout(() => {
+                    window.top.location.href = "https://crosbreaker.dev/";
+                }, 300);
+            }, 100);
         }
-    }, 3); // tuffer
+    }, 10);
 }, 400);
 </script>
